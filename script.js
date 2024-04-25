@@ -3,9 +3,9 @@ $(function() {
     console.log( "ready!" );
     var open_content = "#home_content";
     var menu_array = [
+        '<li class="menu_item" id="home_menu"> Home </li>',
         '<li class="menu_item" id="meals_menu"> Meal Planning </li>',
         '<li class="menu_item" id="bills_menu"> Bill Manager </li>',
-        '<li class="menu_item" id="passwords_menu"> Encrypted Password Manager </li>',
         '<li class="menu_item" id="dev_menu"> Web Development Resources </li>',
         '<li class="menu_item" id="splatoon_menu"> Splatoon Resources </li>'
     ];
