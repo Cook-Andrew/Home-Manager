@@ -85,6 +85,12 @@ h2 {
 section {
     display: none;
 }
+a {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
 
 footer {
     min-height: 5vh;
