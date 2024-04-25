@@ -1,0 +1,105 @@
+/* IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+/* RESET */
+* { margin: 0; padding: 0; text-decoration: none; list-style: none; white-space: nowrap;}
+
+/* VARIABLES */
+:root {
+    --dark-blue: #292d64;
+    --light-blue: #4f4de4;
+    --red: #b80059;
+    --light-grey: #E5E7E6;
+    --very-dark-grey: #323232;
+    background-color: var(--very-dark-grey);
+}
+
+/* STYLE */
+
+header, nav {
+    background-color: var(--dark-blue);
+    margin: 0 15vw;
+    max-width: 70vw;
+    padding: 2vh 5vw;
+    color: var(--light-grey);
+}
+nav {
+    overflow: hidden;
+}
+menu {
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+    scrollbar-color: transparent;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+menu::-webkit-scrollbar {
+    display: none;
+}
+header {
+    min-height: 5vh;
+}
+h1 {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.login {
+    text-align: right;
+}
+nav li, label, button{
+    display: inline;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+button, input {
+    border-radius: 5px;
+    background-color: var(--light-grey);
+    padding: 0 0.3rem;
+    margin: 0 0.3rem;
+}
+input, a {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+}
+
+main {
+    max-width: 70vw;
+    min-height: 80vh;
+    margin: 0 15vw;
+    background-color: var(--light-grey);
+    font-family: "Roboto", monospace;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5vh 5vw;
+}
+h2 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+}
+section {
+    display: none;
+}
+
+footer {
+    min-height: 5vh;
+    max-width: 70vw;
+    margin: 0 15vw;
+    padding: 1vh 5vw;
+    background-color: var(--dark-blue);
+    color: var(--light-grey);
+    font-family: "Roboto", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+footer li {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
