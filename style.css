@@ -77,10 +77,13 @@ main {
     font-style: normal;
     padding: 5vh 5vw;
 }
-h2 {
+h2, h3, h4 {
     font-family: "Roboto Mono", monospace;
     font-weight: 500;
     font-style: normal;
+}
+p {
+    text-wrap: pretty;
 }
 section {
     display: none;
@@ -90,6 +93,9 @@ a {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+a:hover {
+    text-decoration: underline;
 }
 dd::before {
   content: "◦ ";
