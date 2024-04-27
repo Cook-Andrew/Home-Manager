@@ -19,7 +19,6 @@
 header, nav {
     background-color: var(--dark-blue);
     margin: 0 15vw;
-    max-width: 70vw;
     padding: 2vh 5vw;
     color: var(--light-grey);
 }
@@ -68,7 +67,6 @@ input, a {
 }
 
 main {
-    max-width: 70vw;
     min-height: 80vh;
     margin: 0 15vw;
     background-color: var(--light-grey);
@@ -100,10 +98,12 @@ a:hover {
 dd::before {
   content: "◦ ";
 }
+.calendar_container {
+    overflow-x: scroll;
+}
 
 footer {
     min-height: 5vh;
-    max-width: 70vw;
     margin: 0 15vw;
     padding: 1vh 5vw;
     background-color: var(--dark-blue);
@@ -117,4 +117,23 @@ footer li {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+ 
+/* BREAK POINT */
+@media  only screen and (max-width: 700px) {
+    header, nav, main, footer {
+        max-width: 100vw;
+        margin: 0px;
+    }  
+    .calendar_container {
+        max-width: 90vw;
+    }
+}
+@media only screen and (min-width: 700px) {
+    header, nav, main, footer {
+        max-width: 80vw;
+    }  
+    .calendar_container {
+        max-width: 60vw;
+    }
 }
