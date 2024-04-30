@@ -47,7 +47,7 @@ function login() {
             // Get data from Firestore
             getDocs(collection(db, "billslist")).then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    document.getElementById('bills_database_content').innerHTML += "Bill: " + doc.data().bill + "</br>Due: " + doc.data().due + "</br>Ammount: " + doc.data().ammount + '</br></br>';
+                    document.getElementById('bills_database_content').innerHTML += "Bill: " + doc.data().bill + "</br>Due: " + doc.data().due + "</br>Amount: " + doc.data().ammount + '</br></br>';
                 });
             });
         })
