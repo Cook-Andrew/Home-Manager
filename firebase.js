@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -47,7 +47,13 @@ function login() {
             // Get data from Firestore
             getDocs(collection(db, "billslist")).then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    document.getElementById('bills_database_content').innerHTML += "Bill: " + doc.data().bill + "</br>Due: " + doc.data().due + "</br>Amount: " + doc.data().ammount + '</br></br>';
+                    document.getElementById('bills_database_content').innerHTML += "Bill: " + doc.data().bill + "</br>Due: " + doc.data().due + "</br>Amount: " + doc.data().ammount + "</br></br>";
+                });
+            });
+            getDocs(collection(db, "todolist")).then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    document.getElementById('todo_database_content').innerHTML += "To Do: " + doc.data().todo + "</br>Due: " + doc.data().due + "</br><button class='delete_button' id='" + doc.id + "'>Delete</button></br></br>";
+                    document.getElementById(doc.id).addEventListener('click', deleteItem);
                 });
             });
         })
@@ -56,7 +62,31 @@ function login() {
         });
 }
 
+function addItem() {
+    
+    const docRef = addDoc(collection(db, "todolist"), {
+        todo: document.getElementById('addtodo').value,
+        due: document.getElementById('adddue').value
+      });
+      console.log("Document written with ID: ", docRef.id);
+      
+      getDocs(collection(db, "todolist")).then((querySnapshot) => {
+        document.getElementById('todo_database_content').innerHTML = "";
+        querySnapshot.forEach((doc) => {
+            document.getElementById('todo_database_content').innerHTML += "To Do: " + doc.data().todo + "</br>Due: " + doc.data().due + "</br><button class='delete_button' id='" + doc.id + "'>Delete</button></br></br>";
+            document.getElementById(doc.id).addEventListener('click', deleteItem);
+        });
+    });
+}
+
+function deleteItem() {
+    var id = $(this).attr('id');
+    alert(id);
+}
+
 document.getElementById('login').addEventListener('click', login);
+document.getElementById('add').addEventListener('click', addItem);
+
 $(function() { 
     if (localStorage.getItem("success")) {
         login();
